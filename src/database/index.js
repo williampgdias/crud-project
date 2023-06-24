@@ -5,7 +5,7 @@ function connect() {
   // mongoose.set('useUnifiedTopology', true);
 
   mongoose.connect(
-    'mongodb://localhost:27017/?readPreference=primary&ssl=false',
+    'mongodb://localhost:27017/projeto-crud?readPreference=primary&ssl=false',
   );
 
   const db = mongoose.connection;
