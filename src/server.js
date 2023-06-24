@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const db = require('./database');
+const routes = require('./routes');
 
 const app = express();
 
@@ -17,12 +18,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // habilita server para receber dados via post (Formulário)
 app.use(express.urlencoded({ extended: true }));
 
-// rotas
-app.get('/', (req, res) => {
-  res.render('index', {
-    title: 'Titulo Teste',
-  });
-});
+// definindo as rotas
+app.use('/', routes);
 
 // 404 error (not found)
 app.use((req, res) => {
